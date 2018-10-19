@@ -14,8 +14,8 @@ Mill plugin to publish artifacts into a local Maven repository.
 import $ivy.`de.tototec::de.tobiasroeser.mill.publishM2:{mill-publishm2-version}`
 import de.tobiasroeser.mill.publishM2._
 
-object project extends ScalaModule with PublishModule with PublishM2Module {
-
+object project extends PublishM2Module {
+  // ...
 }
 ----
 
