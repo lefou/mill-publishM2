@@ -8,13 +8,17 @@ Mill plugin to publish artifacts into a local Maven repository.
 
 == Quickstart
 
+Just mix-in the `PublishM2Module` into your project. `PublishM2Module` already extends mill's built-in `PublishModule`.
+
 .File: `build.sc`
 [source,scala,subs="verbatim,attributes"]
 ----
+import mill._, scalalib._, publish._
+
 import $ivy.`de.tototec::de.tobiasroeser.mill.publishM2:{mill-publishM2-version}`
 import de.tobiasroeser.mill.publishM2._
 
-object project extends PublishM2Module {
+object project extends PublishModule with PublishM2Module {
   // ...
 }
 ----
