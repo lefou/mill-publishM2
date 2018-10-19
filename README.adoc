@@ -1,5 +1,5 @@
 = mill-publishM2 - Publish artifacts to local Maven Repositories
-:mill-publishM2: 0.0.1-SNAPSHOT
+:mill-publishM2-version: 0.0.1-SNAPSHOT
 :toc:
 :toc-placement: preamble
 
@@ -11,7 +11,7 @@ Mill plugin to publish artifacts into a local Maven repository.
 .File: `build.sc`
 [source,scala,subs="verbatim,attributes"]
 ----
-import $ivy.`de.tototec::de.tobiasroeser.mill.publishM2:{mill-publishm2-version}`
+import $ivy.`de.tototec::de.tobiasroeser.mill.publishM2:{mill-publishM2-version}`
 import de.tobiasroeser.mill.publishM2._
 
 object project extends PublishM2Module {
