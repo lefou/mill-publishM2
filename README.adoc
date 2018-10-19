@@ -1,5 +1,5 @@
 = mill-publishM2 - Publish artifacts to local Maven Repositories
-:mill-publishM2-version: 0.0.1-SNAPSHOT
+:mill-publishM2-version: 0.0.1
 :toc:
 :toc-placement: preamble
 
@@ -43,3 +43,6 @@ Apache License, version 2
 
 == Changelog
 
+=== mill-publishM2 0.0.1 - 2018-10-19
+
+* Initial release
