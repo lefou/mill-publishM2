@@ -1,1 +1,41 @@
 = mill-publishM2 - Publish artifacts to local Maven Repositories
+:mill-publishM2: 0.0.1-SNAPSHOT
+:toc:
+:toc-placement: preamble
+
+
+Mill plugin to publish artifacts into a local Maven repository.
+
+== Quickstart
+
+.File: `build.sc`
+[source,scala,subs="verbatim,attributes"]
+----
+import $ivy.`de.tototec::de.tobiasroeser.mill.publishM2:{mill-publishm2-version}`
+import de.tobiasroeser.mill.publishM2._
+
+object project extends ScalaModule with PublishModule with PublishM2Module {
+
+}
+----
+
+.Shell: Publishing to default local Maven repository
+----
+> mill project.publishM2Local
+[40/40] project.publishM2Local
+Publishing to /home/user/.m2/repository
+----
+
+.Shell: Publishing to custom local Maven repository
+----
+> mill project.publishM2Local /tmp/m2repo
+[40/40] project.publishM2Local
+Publishing to /tmp/m2repo
+----
+
+== License
+
+Apache License, version 2
+
+== Changelog
+
