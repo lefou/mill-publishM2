@@ -13,8 +13,8 @@ object publishM2 extends ScalaModule with PublishModule {
   def publishVersion = "0.0.2-SNAPSHOT"
 
   object Deps {
-    val millMain = ivy"com.lihaoyi::mill-main:0.2.8"
-    val millScalalib = ivy"com.lihaoyi::mill-scalalib:0.2.8"
+    val millMain = ivy"com.lihaoyi::mill-main:0.3.2"
+    val millScalalib = ivy"com.lihaoyi::mill-scalalib:0.3.2"
     val scalaTest = ivy"org.scalatest::scalatest:3.0.1"
   }
 
@@ -33,7 +33,7 @@ object publishM2 extends ScalaModule with PublishModule {
 
   override def artifactName = "de.tobiasroeser.mill.publishM2"
 
-  def ivyDeps = Agg(
+  def compileIvyDeps = Agg(
     Deps.millMain,
     Deps.millScalalib
   )
