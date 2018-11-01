@@ -12,6 +12,7 @@ trait PublishM2Module extends JavaModule with PublishModule {
    * @param path The path to the local repository (default: `home / ".m2" / "repository"`).
    */
   def publishM2Local(path: Path = home / ".m2" / "repository") = T.command {
+    T.ctx().log.info(s"Publish to ${path}")
     new LocalM2Publisher(path)
       .publish(
         jar = jar().path,
@@ -33,7 +34,6 @@ class LocalM2Publisher(m2Repo: Path) {
     pom: Path,
     artifact: Artifact
   ): Unit = {
-    println("Publishing to " + m2Repo)
     val releaseDir = m2Repo / artifact.group.split("[.]") / artifact.id / artifact.version
     writeFiles(
       jar -> releaseDir / s"${artifact.id}-${artifact.version}.jar",
