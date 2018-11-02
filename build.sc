@@ -19,7 +19,7 @@ object publishM2 extends ScalaModule with PublishModule {
 
   def scalaVersion = "2.12.7"
 
-  def publishVersion = "0.0.2"
+  def publishVersion = "0.0.3-SNAPSHOT"
 
   object Deps {
     val millMain = ivy"com.lihaoyi::mill-main:0.3.2"
