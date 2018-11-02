@@ -1,5 +1,5 @@
 = mill-publishM2 - Publish artifacts to local Maven Repositories
-:mill-publishM2-version: 0.0.1
+:mill-publishM2-version: 0.0.2
 :toc:
 :toc-placement: preamble
 
@@ -13,7 +13,8 @@ Just mix-in the `PublishM2Module` into your project. `PublishM2Module` already e
 .File: `build.sc`
 [source,scala,subs="verbatim,attributes"]
 ----
-import mill._, scalalib._, publish._
+import mill._
+import mill.scalalib._
 
 import $ivy.`de.tototec::de.tobiasroeser.mill.publishM2:{mill-publishM2-version}`
 import de.tobiasroeser.mill.publishM2._
@@ -42,6 +43,10 @@ Publishing to /tmp/m2repo
 Apache License, version 2
 
 == Changelog
+
+=== mill-publishM2 0.0.2 - 2018-11-02
+
+* Changed packaging and loading into mill by excluding mill dependencies
 
 === mill-publishM2 0.0.1 - 2018-10-19
 
