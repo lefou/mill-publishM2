@@ -6,6 +6,15 @@ import mill.define.Module
 import mill.scalalib._
 import mill.scalalib.publish._
 
+/** Release to Maven Central. */
+def _release(
+  sonatypeCreds: String,
+  release: Boolean = true
+) = T.command {
+  publishM2.test.test()()
+  publishM2.publish(sonatypeCreds = sonatypeCreds, release = release)()
+}
+
 object publishM2 extends ScalaModule with PublishModule {
 
   def scalaVersion = "2.12.7"
