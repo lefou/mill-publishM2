@@ -21,7 +21,7 @@ object publishM2 extends ScalaModule with PublishModule {
 
   def scalaVersion = "2.12.8"
 
-  def publishVersion = "0.1.0"
+  def publishVersion = "0.1.1-SNAPSHOT"
 
   object Deps {
     val lambdaTest = ivy"de.tototec:de.tobiasroeser.lambdatest:0.7.0"
