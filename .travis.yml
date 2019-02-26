@@ -1,0 +1,5 @@
+language: java
+
+script:
+  - ./millw publishM2.test
+  - ./millw publishM2.publishLocal
