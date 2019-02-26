@@ -15,16 +15,20 @@ def _release(
   publishM2.publish(sonatypeCreds = sonatypeCreds, release = release)()
 }
 
+val millVersion = "0.3.6"
+
 object publishM2 extends ScalaModule with PublishModule {
 
-  def scalaVersion = "2.12.7"
+  def scalaVersion = "2.12.8"
 
   def publishVersion = "0.0.3-SNAPSHOT"
 
   object Deps {
-    val millMain = ivy"com.lihaoyi::mill-main:0.3.2"
-    val millScalalib = ivy"com.lihaoyi::mill-scalalib:0.3.2"
-    val scalaTest = ivy"org.scalatest::scalatest:3.0.1"
+    val lambdaTest = ivy"de.tototec:de.tobiasroeser.lambdatest:0.7.0"
+    val millMain = ivy"com.lihaoyi::mill-main:${millVersion}"
+    val millScalalib = ivy"com.lihaoyi::mill-scalalib:${millVersion}"
+    val osLib = ivy"com.lihaoyi::os-lib:0.2.7"
+    val scalaTest = ivy"org.scalatest::scalatest:3.0.4"
   }
 
   def javacOptions = Seq("-source", "1.8", "-target", "1.8")
@@ -44,14 +48,17 @@ object publishM2 extends ScalaModule with PublishModule {
 
   def compileIvyDeps = Agg(
     Deps.millMain,
-    Deps.millScalalib
+    Deps.millScalalib,
+    Deps.osLib
   )
 
   object test extends Tests {
-
-    override def ivyDeps = Agg(
-      Deps.scalaTest
-    )
+    override def ivyDeps = T{
+      publishM2.compileIvyDeps() ++ Agg(
+        Deps.scalaTest,
+        Deps.lambdaTest
+      )
+    }
     def testFrameworks = Seq("org.scalatest.tools.Framework")
 
   }
