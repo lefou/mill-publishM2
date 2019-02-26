@@ -1,5 +1,5 @@
 = mill-publishM2 - Publish artifacts to local Maven Repositories
-:mill-publishM2-version: 0.0.2
+:mill-publishM2-version: 0.1.0
 :toc:
 :toc-placement: preamble
 
@@ -19,7 +19,7 @@ import mill.scalalib._
 import $ivy.`de.tototec::de.tobiasroeser.mill.publishM2:{mill-publishM2-version}`
 import de.tobiasroeser.mill.publishM2._
 
-object project extends PublishModule with PublishM2Module {
+object project extends PublishM2Module {
   // ...
 }
 ----
@@ -40,9 +40,15 @@ Publishing to /tmp/m2repo
 
 == License
 
-Apache License, version 2
+Apache License, version 2.0
 
 == Changelog
+
+=== mill-publishM2 0.1.0 - 2019-02-26
+
+* Version bump to mill 0.3.6
+* `publishM2Local` now return `PathRef`s to published files
+* Added test cases
 
 === mill-publishM2 0.0.2 - 2018-11-02
 
