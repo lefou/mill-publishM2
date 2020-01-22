@@ -1,5 +1,5 @@
 = mill-publishM2 - Publish artifacts to local Maven Repositories
-:mill-publishM2-version: 0.1.0
+:mill-publishM2-version: 0.1.1
 :toc:
 :toc-placement: preamble
 
@@ -38,13 +38,31 @@ Publishing to /home/user/.m2/repository
 Publishing to /tmp/m2repo
 ----
 
+== Version Compatibility Matrix
+
+Mill is still in active development, and has no stable API yet.
+Hence, not all mill-publishM2 versions work with every mill version.
+
+The following table shows a matrix of compatible mill and mill-publishM2 versions.
+
+.Version Compatibility Matrix
+[options="header"]
+|===
+| mill-osgi | mill
+| 0.1.1 | 0.5.7 - 0.6.0
+| 0.1.0 | 0.3.6 - 0.5.3
+| 0.0.2 | 0.3.2
+| 0.0.1 | 0.2.8
+|===
+
+
 == License
 
 Apache License, version 2.0
 
 == Changelog
 
-=== mill-publish 0.1.1 - 2020-01-22
+=== mill-publishM2 0.1.1 - 2020-01-22
 
 * Version bump to mill 0.5.7
 
