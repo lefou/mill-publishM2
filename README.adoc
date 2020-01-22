@@ -44,6 +44,10 @@ Apache License, version 2.0
 
 == Changelog
 
+=== mill-publish 0.1.1 - 2020-01-22
+
+* Version bump to mill 0.5.7
+
 === mill-publishM2 0.1.0 - 2019-02-26
 
 * Version bump to mill 0.3.6
