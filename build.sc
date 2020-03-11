@@ -15,13 +15,13 @@ def _release(
   publishM2.publish(sonatypeCreds = sonatypeCreds, release = release)()
 }
 
-val millVersion = "0.5.7"
+val millVersion = "0.6.0"
 
 object publishM2 extends ScalaModule with PublishModule {
 
   def scalaVersion = "2.12.8"
 
-  def publishVersion = "0.1.2"
+  def publishVersion = "0.1.3"
 
   object Deps {
     val lambdaTest = ivy"de.tototec:de.tobiasroeser.lambdatest:0.7.0"
